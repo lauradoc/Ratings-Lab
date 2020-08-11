@@ -25,6 +25,11 @@ def get_user_profile(user_id):
 
     return User.query.filter_by(user_id = user_id).one()
 
+def get_user_by_email(email):
+    """takes in email and returns user if exists, otherwise returns none"""
+
+    return User.query.filter_by(email = email).first()
+
 def create_movie(title, overview, release_date, poster_path):
     """Create and return a new movie."""
 
